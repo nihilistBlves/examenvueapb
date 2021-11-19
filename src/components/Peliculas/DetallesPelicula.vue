@@ -9,7 +9,7 @@
               <p class="card-text">{{pelicula.argumento}}</p>
               <button v-on:click="mostrarFrameVideo()" class="btn btn-danger">YouTube</button>
               <div class="embed-responsive embed-responsive-1by1 mt-3" v-if="mostrarVideo">
-                <iframe class="embed-responsive-item" :src="getVideoFrame(pelicula.enlaceVideo)"></iframe>
+                <iframe class="embed-responsive-item" :src="'https://www.youtube.com/embed/'+pelicula.youTube"></iframe>
               </div>
             </div>
             <!-- FOOTER MODIFICAR GENERO -->
@@ -97,6 +97,9 @@ export default {
                     this.mostrar(false);
                 }
             });
+        },
+        mostrarFrameVideo() {
+            this.mostrarVideo = true;
         }
     },
     mounted() {
